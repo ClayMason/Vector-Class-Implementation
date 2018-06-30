@@ -25,6 +25,12 @@ template <class T> class Vec {
     bool empty () const { return m_size == 0; }
     size_type size() const { return m_size; } // get the size of the vector
 
+    // iterator IMPLEMENTATION
+    T* begin () { return m_data; } // arrays are naturally pointers
+    const T* begin () const { return m_data; }
+    T* end () { return m_data + m_size; }
+    const T* end () const { return m_data + m_size; }
+
   private:
     // PRIVATE MEMBER FUNCTIONS
     void create ();
